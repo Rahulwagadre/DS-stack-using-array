@@ -2,13 +2,16 @@
 #include<stdlib.h>
 #define MAX_SIZE 101
 
+// Initialization of stack (global scope)
 int array[MAX_SIZE],top=-1,store;
 
+// retrival of top element
 int get_top()
 {
     return array[top];
 }
 
+// Overflow condition
 int is_full()
 {
     if(top == MAX_SIZE)
@@ -22,6 +25,7 @@ int is_full()
     }
 }
 
+// Underflow condition
 int is_empty()
 {
     if(top==-1)
@@ -36,6 +40,7 @@ int is_empty()
 
 }
 
+//push function for insertion 
 void push(int x)
 {
     if(top==MAX_SIZE-1)
@@ -48,6 +53,8 @@ void push(int x)
         array[top] = x;
     }
 }
+
+// Pop function for deletion
 int pop()
 {
     if(top==-1)
@@ -61,6 +68,8 @@ int pop()
         return store;
     }
 }
+
+// print stack
 void show()
 {
     int i;
@@ -71,6 +80,8 @@ void show()
     }
     printf("\n");
 }
+
+// Main function
 int main()
 {
    printf("****   stack Implementation using array  ****\n");
